@@ -18,3 +18,4 @@ The script was written for Python 3.4+, but will probably run on Python 3.3 if t
 
 Please report any inconsistencies you may find between the JSON file and Jason Riggle's chart, or, better yet, please fix them and create pull requests. Please do not report any errors you may find in Jason Riggle's chart here. Instead, send your comments directly to the author; there is a non-zero chance of him responding to them. Additionally, please let me know if this repository references an outdated version of Jason Riggle's chart.
 
+Big thanks to Rafael Abramovitz for helping me with the creation of a machine-readable version of the chart.
