@@ -2,17 +2,45 @@ This repository hosts a representation of [Jason Riggle's](http://hum.uchicago.e
  
 The keys in the JSON file are the phonemes' IPA symbols. The values are their English-language name and the binary features from the chart linked above (see the JSON file for an example).
 
-Additionally, this repository provides a script (phonemeviewer.py) which lets you view the phoneme features from the provided JSON file and see what positive (+ or ±) features each phoneme has. Additionally, when given a list of phonemes, the script calculates the 'similarity' between these phonemes and lists the positive features that every phoneme in the list shares (if any).
+Additionally, this repository provides a script (phonemeviewer.py) which lets you view the phoneme features from the provided JSON file and see what positive (+ or ±) features each phoneme has. Additionally, when given a list of phonemes, the script calculates the 'similarity' between these phonemes and lists the features that every phoneme in the list shares (if any).
 
 Example usage:
 
     > ð
-    voiced dental fricative
-    ['ant', 'cons', 'cont', 'coronal', 'dorsal', 'voice']
+	voiced dental fricative
+	+cons
+	-son
+	-syl
+	-labial
+	+coronal
+	+ant
+	-dist
+	+dorsal
+	-pharyngeal
+	+voice
+	-SG
+	-CG
+	+cont
+	-strident
+	-lateral
+	-del_rel
+	-nasal
 
     > ð ʃ
-    0.5652173913043478
-    ['cons', 'cont', 'coronal']
+	0.782608695652174
+	-del_rel
+	+coronal
+	-son
+	-syl
+	-pharyngeal
+	-CG
+	-labial
+	-SG
+	-lateral
+	+cont
+	-nasal
+	+cons
+	['coronal', 'cont', 'cons']
 
 The script was written for Python 3.4+, but will probably run on Python 3.3 if the backported enum package from 3.4 is installed. You may use http://ipa.typeit.org/full/ to type the IPA symbols into the script.
 
