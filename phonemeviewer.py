@@ -20,7 +20,7 @@ class FeatureValue(Enum):
     unspecified = -1
 
 
-class PhonemeElement:
+class Phoneme:
 
     def __init__(self, symbol, name, features, is_complete=True,
                  parent_phonemes: set=None, feature_counter: Counter=None,
@@ -77,6 +77,12 @@ class PhonemeElement:
 
     @classmethod
     def from_symbol(cls, symbol: str, phonemes: dict):
+        """
+        Initialise a Phoneme object from its IPA symbol, using a dictionary of IPA symbols and features
+        :param symbol:
+        :param phonemes:
+        :return:
+        """
         phoneme = phonemes[symbol]
         name = phoneme['name']
         features = cls.parse_features(phoneme['features'])
@@ -118,14 +124,38 @@ class PhonemeElement:
     def strength(self):
         return self.parent_similarity * sum(self.parent_phonemes.values())
 
+    @property
+    def distinctive_features(self):
+        """
+        Generate tuples of strings of distinctive features of these phonemes.
+        May be useful for detailed output.
+        :return:
+        """
+        for feature, value in self.features:
+            if value == FeatureValue.yes:
+                output_value = '+'
+            elif value == FeatureValue.no:
+                output_value = '-'
+            elif value == FeatureValue.both:
+                output_value = '±'
+            else:
+                # this feature is unspecified
+                continue
+
+            yield feature, output_value
+
 
     def get_positive_features(self):
         for feature, value in self:
             if value == FeatureValue.yes or value == FeatureValue.both:
                 yield feature
 
-
     def similarity_ratio(self, other):
+        """
+        computes the similarity between this Phoneme object and another
+        :param other: Phoneme
+        :return:
+        """
         max_feature_value = max(self.feature_counter.values())
         similarity_count = 0
         for feature in other.features:
@@ -137,6 +167,13 @@ class PhonemeElement:
         return similarity_ratio
 
     def partial_equals(self, other, threshold=0.7):
+        """
+        returns True if this Phoneme object's similarity to another Phoneme object
+        is equal to or above the given threshold of similarity
+        :param other: Phoneme
+        :param threshold: similarity threshold
+        :return:
+        """
         similarity_ratio = self.similarity_ratio(other)
 
         if similarity_ratio >= threshold:
@@ -145,6 +182,11 @@ class PhonemeElement:
             return False
 
     def intersection(self, other):
+        """
+        Returns an 'intersection phoneme' between this Phone object and another
+        :param other: Phoneme
+        :return: Phoneme
+        """
         if self == other:
             return self
         elif other:
@@ -161,7 +203,7 @@ class PhonemeElement:
 
             combined_similarity = self.similarity_ratio(other)
 
-            partial_phoneme = PhonemeElement(new_symbol, 'partial phoneme',
+            partial_phoneme = Phoneme(new_symbol, 'partial phoneme',
                                              intersection, is_complete=False,
                                              parent_phonemes=new_parents,
                                              feature_counter=new_feature_counter,
@@ -172,13 +214,23 @@ class PhonemeElement:
             return None
 
     def pick_closest(self, other_phonemes):
+        """
+        Picks the closest Phoneme object (using the similarity ratio) from an iterable of Phoneme objects
+        :param other_phonemes: iterable of Phonemes
+        :return: Phoneme
+        """
         closest = max(other_phonemes, key=lambda phoneme: self.similarity_ratio(phoneme))
         return closest
+
+
+def print_distinctive_features(phoneme: Phoneme):
+    for feature, output_value in phoneme.distinctive_features:
+        print('{}{}'.format(output_value, feature))
 
 def show_phoneme(symbol, phonemes):
     phoneme = phonemes[symbol]
     print(phoneme.name)
-    pprint(sorted(phoneme.get_positive_features()))
+    print_distinctive_features(phoneme)
 
 def show_intersection(symbols, phonemes):
     first, *rest = symbols
@@ -188,7 +240,7 @@ def show_intersection(symbols, phonemes):
         current_intersection = current_intersection.intersection(next_phoneme)
         print(current_intersection.parent_similarity)
 
-    print(sorted(current_intersection.get_positive_features()))
+    print_distinctive_features(current_intersection)
 
 def process_input(input_to_process: str, phonemes):
     if ' ' in input_to_process:
@@ -202,7 +254,7 @@ if __name__ == '__main__':
     with open('phonemes.json') as phonemes_file:
         phoneme_dict = json.load(phonemes_file)
 
-    phonemes = {symbol: PhonemeElement.from_symbol(symbol, phoneme_dict) 
+    phonemes = {symbol: Phoneme.from_symbol(symbol, phoneme_dict)
                 for symbol in phoneme_dict}
 
     while True:
