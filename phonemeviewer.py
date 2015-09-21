@@ -3,12 +3,9 @@
 __author__ = 'Anton Melnikov'
 # http://ostensible.me
 
-from collections import OrderedDict
-import json
 from pprint import pprint
 
-from phoneme import Phoneme, FeatureValue
-
+from phonemelib import Phoneme, FeatureValue, phonemes
 
 def print_distinctive_features(phoneme: Phoneme):
     for feature, value in phoneme:
@@ -47,18 +44,7 @@ def process_input(input_to_process: str, phonemes):
     else:
         show_phoneme(input_to_process, phonemes)
 
-def initialise():
-    with open('phonemes.json') as phonemes_file:
-        phoneme_dict = json.load(phonemes_file, object_pairs_hook=OrderedDict)
-
-    phonemes = {symbol: Phoneme.from_symbol(symbol, phoneme_dict)
-                for symbol in phoneme_dict}
-
-    return phonemes
-
 if __name__ == '__main__':
-
-    phonemes = initialise()
 
     while True:
         user_input = input('> ')
