@@ -2016,7 +2016,7 @@
         }
     },
     "ɨ": {
-        "name": "close central unrounded vowel",
+        "name": "high central unrounded vowel",
         "features": {
             "cons": false,
             "son": true,
