@@ -2436,7 +2436,7 @@
         }
     },
     "ə": {
-        "name": "mid-central unrounded vowel",
+        "name": "mid central unrounded vowel",
         "features": {
             "cons": false,
             "son": true,
