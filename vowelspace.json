@@ -1,0 +1,116 @@
+{
+    "a": {
+        "backness": 0.0,
+        "height": 0.0,
+        "nasal": false,
+        "rounded": false
+    },
+    "e": {
+        "backness": 0.0,
+        "height": 0.75,
+        "nasal": false,
+        "rounded": false
+    },
+    "i": {
+        "backness": 0.0,
+        "height": 1.0,
+        "nasal": false,
+        "rounded": false
+    },
+    "o": {
+        "backness": 1.0,
+        "height": 0.75,
+        "nasal": false,
+        "rounded": true
+    },
+    "u": {
+        "backness": 1.0,
+        "height": 1.0,
+        "nasal": false,
+        "rounded": true
+    },
+    "y": {
+        "backness": 0.0,
+        "height": 1.0,
+        "nasal": false,
+        "rounded": true
+    },
+    "æ": {
+        "backness": 0.0,
+        "height": 0.125,
+        "nasal": false,
+        "rounded": false
+    },
+    "ø": {
+        "backness": 0.0,
+        "height": 0.75,
+        "nasal": false,
+        "rounded": true
+    },
+    "œ": {
+        "backness": 0.0,
+        "height": 0.25,
+        "nasal": false,
+        "rounded": true
+    },
+    "ɔ": {
+        "backness": 1.0,
+        "height": 0.25,
+        "nasal": false,
+        "rounded": true
+    },
+    "ə": {
+        "backness": 0.5,
+        "height": 0.5,
+        "nasal": false,
+        "rounded": false
+    },
+    "ɛ": {
+        "backness": 0.0,
+        "height": 0.25,
+        "nasal": false,
+        "rounded": false
+    },
+    "ɨ": {
+        "backness": 0.5,
+        "height": 1.0,
+        "nasal": false,
+        "rounded": false
+    },
+    "ɪ": {
+        "backness": 0.25,
+        "height": 0.875,
+        "nasal": false,
+        "rounded": false
+    },
+    "ɯ": {
+        "backness": 1.0,
+        "height": 1.0,
+        "nasal": false,
+        "rounded": false
+    },
+    "ʊ": {
+        "backness": 0.75,
+        "height": 0.875,
+        "nasal": false,
+        "rounded": true
+    },
+    "ʌ": {
+        "backness": 1.0,
+        "height": 0.25,
+        "nasal": false,
+        "rounded": false
+    },
+    "ʏ": {
+        "backness": 0.25,
+        "height": 0.875,
+        "nasal": false,
+        "rounded": true
+    },
+    "ẽ": {
+        "backness": 0.0,
+        "height": 0.75,
+        "nasal": true,
+        "rounded": false
+    }
+}
