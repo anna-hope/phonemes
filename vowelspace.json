@@ -71,6 +71,12 @@
         "nasal": false,
         "rounded": false
     },
+    "ɜ": {
+        "backness": 0.5,
+        "height": 0.25,
+        "nasal": false,
+        "rounded": false
+    },
     "ɨ": {
         "backness": 0.5,
         "height": 1.0,
