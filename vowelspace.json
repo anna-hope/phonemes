@@ -118,5 +118,17 @@
         "height": 0.75,
         "nasal": true,
         "rounded": false
+    },
+    "ɑ": {
+        "backness": 1.0,
+        "height": 0.0,
+        "nasal": false,
+        "rounded": false
+    },
+    "ɒ": {
+        "backness": 1.0,
+        "height": 0.0,
+        "nasal": false,
+        "rounded": true
     }
 }
