@@ -357,7 +357,7 @@
             "SG": false,
             "CG": false,
             "cont": true,
-            "strident": false,
+            "strident": true,
             "lateral": false,
             "del_rel": false,
             "nasal": false
@@ -413,7 +413,7 @@
             "SG": false,
             "CG": false,
             "cont": true,
-            "strident": false,
+            "strident": true,
             "lateral": false,
             "del_rel": false,
             "nasal": false
