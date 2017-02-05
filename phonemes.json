@@ -2414,7 +2414,7 @@
             "son": true,
             "syl": true,
             "labial": true,
-            "round": false,
+            "round": true,
             "coronal": false,
             "ant": 0,
             "dist": 0,
