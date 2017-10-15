@@ -392,7 +392,7 @@
         }
     },
     "ʃʲ": {
-        "name": "voiceless alveolo-palatal sibilant",
+        "name": "palatalized voiceless palato-alveolar sibilant",
         "features": {
             "cons": true,
             "son": false,
@@ -413,7 +413,7 @@
             "SG": false,
             "CG": false,
             "cont": true,
-            "strident": false,
+            "strident": true,
             "lateral": false,
             "del_rel": false,
             "nasal": false
