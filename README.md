@@ -1,4 +1,6 @@
-This repository hosts a representation of [Jason Riggle's](http://hum.uchicago.edu/~jriggle/) [chart of phonological features](https://dl.dropboxusercontent.com/u/5956329/Riggle/PhonChart_v1212.pdf) version **12.12** in a machine-readable JSON format.
+This repository hosts a representation of [Jason Riggle's](http://hum.uchicago.edu/~jriggle/) 
+[chart of phonological features](https://github.com/notnami/phonemes/blob/master/PhonChart_v1212_riggle.pdf) 
+version **12.12** in a machine-readable JSON format.
  
 The keys in the JSON file are the phonemes' IPA symbols. The values are their English-language name and the binary features from the chart linked above (see the JSON file for an example).
 
