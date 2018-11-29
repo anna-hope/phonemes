@@ -2450,7 +2450,7 @@
             "high": false,
             "low": false,
             "back": false,
-            "tense": false,
+            "tense": 0,
             "pharyngeal": true,
             "ATR": false,
             "voice": true,
