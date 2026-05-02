@@ -1,3 +1,17 @@
+# Archived
+
+I haven't kept up with the field in a long time. The data available in this repo may
+still be useful, but I don't know whether Jason Riggle has updated his chart since I added it here,
+and don't have the expertise to address any issues that might arise with it. 
+
+If there is a fork or a different repo that has more up-to-date datasets, I'd be happy
+to link to it here. If you maintain one, feel free to drop me a note at the email address
+available on my website (link in my GH profile).
+
+Below is the original README for this repo.
+
+---
+
 This repository hosts a representation of [Jason Riggle's](http://hum.uchicago.edu/~jriggle/) 
 [chart of phonological features](https://github.com/notnami/phonemes/blob/master/PhonChart_v1212_riggle.pdf) 
 version **12.12** in a machine-readable JSON format.
